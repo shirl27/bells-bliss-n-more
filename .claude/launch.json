@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8765", "--directory", "prototypes/bells-bliss-n-more"],
       "port": 8765
+    },
+    {
+      "name": "prototype-variants",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8766", "--directory", "_site"],
+      "port": 8766
     }
   ]
 }

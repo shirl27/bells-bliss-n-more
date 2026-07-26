@@ -6,7 +6,7 @@ var heroConfig = {
   layout: 'two-column', // 'two-column' | 'full-width'
   splitRatio: '1:1.15', // left:right column ratio, used when layout is 'two-column'
   headline: 'Celebrations, made beautiful.',
-  subhead: 'Planning and rentals, bundled — real prices, one checkout.',
+  subhead: 'Planning and rentals, bundled — real prices, no guesswork.',
   overlayOpacity: 0 // 0-1, darkens the hero image for text legibility when layout is 'full-width'
 };
 

@@ -2,8 +2,8 @@ name: Deploy prototype to GitHub Pages
 
 on:
   push:
-    branches: [main, prototype-review]
-    paths: [prototypes/bells-bliss-n-more/**]
+    branches: [main]
+    paths: [prototypes/bells-bliss-n-more/**, scripts/build-prototype-variants.js]
   workflow_dispatch:
 
 permissions:
@@ -23,9 +23,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate end-2-end / mvp / phase0 prototype variants
+        run: node scripts/build-prototype-variants.js _site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: prototypes/bells-bliss-n-more
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

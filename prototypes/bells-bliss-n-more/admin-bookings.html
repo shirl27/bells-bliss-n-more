@@ -19,8 +19,8 @@
       <a href="admin-dashboard.html">Dashboard</a>
       <a href="admin-bookings.html" aria-current="page">Bookings</a>
       <a href="admin-catalog.html">Catalog</a>
-      <a href="admin-reviews.html">Reviews</a>
-      <a href="admin-hero-edit.html">Home Page</a>
+      <!-- MVP-EXCLUDE:start --><a href="admin-reviews.html">Reviews</a>
+      <a href="admin-hero-edit.html">Home Page</a><!-- MVP-EXCLUDE:end -->
     </nav>
     <div class="header-actions">
       <a class="btn btn-secondary" href="index.html">Log Out</a>
@@ -58,6 +58,7 @@
     </div>
   </form>
 
+  <!-- MVP-EXCLUDE:start -->
   <div class="bulk-action-bar" id="bulk-bar" hidden>
     <span><strong id="selected-count">0</strong> selected</span>
     <div id="bulk-default">
@@ -69,18 +70,19 @@
       <button class="btn btn-danger btn-small" onclick="deleteSelected()">Yes, Delete</button>
     </div>
   </div>
+  <!-- MVP-EXCLUDE:end -->
 
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th scope="col"><input type="checkbox" id="select-all" aria-label="Select all bookings" onchange="toggleSelectAll()"></th>
+          <!-- MVP-EXCLUDE:start --><th scope="col"><input type="checkbox" id="select-all" aria-label="Select all bookings" onchange="toggleSelectAll()"></th><!-- MVP-EXCLUDE:end -->
           <th scope="col">Booking</th><th scope="col">Customer</th><th scope="col">Type</th><th scope="col">Event date</th><th scope="col">Status</th><th scope="col">Payment</th>
         </tr>
       </thead>
       <tbody id="bookings-body">
         <tr data-status="confirmed" data-payment="paid">
-          <td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10482" onchange="updateBulkBar()"></td>
+          <!-- MVP-EXCLUDE:start --><td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10482" onchange="updateBulkBar()"></td><!-- MVP-EXCLUDE:end -->
           <td><a href="admin-booking-detail.html">#BBM-10482</a></td>
           <td>Maria Alvarez</td>
           <td>Rentals + Planning</td>
@@ -89,7 +91,7 @@
           <td><span class="status-badge status-paid">Paid</span></td>
         </tr>
         <tr data-status="pending" data-payment="unpaid">
-          <td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10511" onchange="updateBulkBar()"></td>
+          <!-- MVP-EXCLUDE:start --><td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10511" onchange="updateBulkBar()"></td><!-- MVP-EXCLUDE:end -->
           <td><a href="admin-booking-detail.html">#BBM-10511</a></td>
           <td>Cedar Grove PTA</td>
           <td>Rentals only</td>
@@ -98,7 +100,7 @@
           <td><span class="status-badge status-unpaid">Unpaid</span></td>
         </tr>
         <tr data-status="confirmed" data-payment="paid">
-          <td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10390" onchange="updateBulkBar()"></td>
+          <!-- MVP-EXCLUDE:start --><td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10390" onchange="updateBulkBar()"></td><!-- MVP-EXCLUDE:end -->
           <td><a href="admin-booking-detail.html">#BBM-10390</a></td>
           <td>James Chen</td>
           <td>Planning only</td>
@@ -107,7 +109,7 @@
           <td><span class="status-badge status-paid">Paid</span></td>
         </tr>
         <tr data-status="cancelled" data-payment="unpaid">
-          <td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10205" onchange="updateBulkBar()"></td>
+          <!-- MVP-EXCLUDE:start --><td><input type="checkbox" class="row-select" aria-label="Select booking BBM-10205" onchange="updateBulkBar()"></td><!-- MVP-EXCLUDE:end -->
           <td><a href="admin-booking-detail.html">#BBM-10205</a></td>
           <td>Downtown Burien Rotary</td>
           <td>Rentals only</td>
@@ -116,7 +118,7 @@
           <td><span class="status-badge status-unpaid">Unpaid</span></td>
         </tr>
         <tr data-status="completed" data-payment="paid">
-          <td><input type="checkbox" class="row-select" aria-label="Select booking BBM-09217" onchange="updateBulkBar()"></td>
+          <!-- MVP-EXCLUDE:start --><td><input type="checkbox" class="row-select" aria-label="Select booking BBM-09217" onchange="updateBulkBar()"></td><!-- MVP-EXCLUDE:end -->
           <td><a href="admin-booking-detail.html">#BBM-09217</a></td>
           <td>Maria Alvarez</td>
           <td>Rentals + Planning</td>
@@ -128,7 +130,9 @@
     </table>
   </div>
   <p id="empty-bookings" class="empty-state" hidden>No bookings match these filters.</p>
+  <!-- MVP-EXCLUDE:start -->
   <p style="color:var(--color-text-muted); font-size:0.85rem; margin-top:1.5rem;">Note: bulk delete is a draft addition, sketched for review — it wasn't part of the original Discovery Brief. Before this gets built for real, we should nail down: is this a soft-delete/archive (recoverable) or a permanent hard delete, who's allowed to do it, and whether deleted bookings need to stay in an audit trail.</p>
+  <!-- MVP-EXCLUDE:end -->
 </main>
 
 <footer class="site-footer">

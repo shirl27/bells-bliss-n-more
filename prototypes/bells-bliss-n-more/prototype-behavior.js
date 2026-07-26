@@ -131,6 +131,18 @@ function openMapPicker(evt) {
   setTimeout(function () { document.addEventListener('click', outsideMapPickerClick); }, 0);
 }
 
+// --- Phase 0 "Request Info" form: zero-backend, opens the visitor's own mail client ---
+function submitRequestInfo(evt) {
+  evt.preventDefault();
+  var name = document.getElementById('ri-name').value;
+  var email = document.getElementById('ri-email').value;
+  var message = document.getElementById('ri-message').value;
+  var subject = 'Info request from ' + name;
+  var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+  window.location.href = 'mailto:info@bellsblissnmore.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  return false;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   setCartCount(getCartCount());
   renderAuthState();
