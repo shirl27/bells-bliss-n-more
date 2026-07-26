@@ -49,7 +49,8 @@ Phase 0 is a further-trimmed, zero-automation subset of MVP's already-approved s
 
 - **Screens shipped**: Home, Catalog, Item Detail, Planning Services, Privacy Policy only (4 of the 15 above, plus the legal page).
 - **CTA swap**: "Add to Cart" / "Add to Booking" buttons are removed. Catalog and Planning Services each get one consolidated "Call to Book" / "Email" CTA at the bottom of the page (not one per card — a `tel:` link doesn't vary by item, so per-card repetition was pure redundancy). Item Detail keeps its own CTA since it's a single-item page, with the item name folded into the email subject line. See `ux-spec.md` for the exact behavior.
-- **Removed sitewide**: header cart icon, "View Cart & Continue" links, the Prototype Map footer link (not part of Phase 0's file set).
+- **Removed sitewide**: header cart icon, the auth-state header slot ("Hello, Sign in" — it renders a real link to `login.html`, which Phase 0 doesn't ship), "View Cart & Continue" links, the Prototype Map footer link (not part of Phase 0's file set).
+- **Removed from Catalog specifically**: "View Details" links — every card pointed to the same hardcoded `item-detail.html` regardless of which item was clicked (a pre-existing prototype limitation, not introduced by this split). Tolerable in MVP/End-to-End since "Add to Cart" already works correctly per item without it; removed in Phase 0, where it would have been each card's only action. See `scope-matrix.md`'s "Considered and rejected for Phase 0" for the full reasoning.
 - **Kept as-is**: the Home reviews band (static, real, verbatim content — no admin dependency, so none of the reviews backlog's open questions apply).
 - **Added**: a Request Info form on Home (`mailto:`-prefilled, zero backend) — see `ux-spec.md`.
 - Generated automatically from the same source tree via `scripts/build-prototype-variants.js`; not a hand-maintained fork.
