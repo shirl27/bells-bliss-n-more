@@ -48,7 +48,7 @@ Identical to `ux-design.md` v2 §3 — reproduced here since it's this tier's ac
 Phase 0 is a further-trimmed, zero-automation subset of MVP's already-approved scope, not a new requirement set, so it's documented here as a delta rather than a standalone artifact:
 
 - **Screens shipped**: Home, Catalog, Item Detail, Planning Services, Privacy Policy only (4 of the 15 above, plus the legal page).
-- **CTA swap**: every "Add to Cart" / "Add to Booking" button becomes a "Call to Book" (`tel:`) link, with a paired "Email" (`mailto:`) link on Item Detail. See `ux-spec.md` for the exact behavior.
+- **CTA swap**: "Add to Cart" / "Add to Booking" buttons are removed. Catalog and Planning Services each get one consolidated "Call to Book" / "Email" CTA at the bottom of the page (not one per card — a `tel:` link doesn't vary by item, so per-card repetition was pure redundancy). Item Detail keeps its own CTA since it's a single-item page, with the item name folded into the email subject line. See `ux-spec.md` for the exact behavior.
 - **Removed sitewide**: header cart icon, "View Cart & Continue" links, the Prototype Map footer link (not part of Phase 0's file set).
 - **Kept as-is**: the Home reviews band (static, real, verbatim content — no admin dependency, so none of the reviews backlog's open questions apply).
 - **Added**: a Request Info form on Home (`mailto:`-prefilled, zero backend) — see `ux-spec.md`.
