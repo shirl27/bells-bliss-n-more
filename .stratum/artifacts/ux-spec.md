@@ -40,7 +40,8 @@ Shared by reference from both `ux-design.md` (End-to-End) and `ux-design-mvp.md`
 | Behavior | Applies to | Detail |
 |---|---|---|
 | Cart count persistence | E2E, MVP | `localStorage`, standing in for real session/cart state |
-| Auth-state header slot | E2E, MVP, Phase 0 (renders "Sign in," inert since Phase 0 has no login page) | `renderAuthState()` in `prototype-behavior.js` |
+| Auth-state header slot | E2E, MVP only | `renderAuthState()` in `prototype-behavior.js`. Excluded entirely from Phase 0 — it renders a real link to `login.html`, which isn't part of Phase 0's file set, so it can't just be left in as inert copy |
+| "How it works" step 2 copy | E2E, MVP: "pay online" copy; Phase 0: "Call or email us" copy | Home page step strip — Phase 0's copy must not promise a cart/payment flow that doesn't exist in that tier |
 | Keyboard navigation | E2E, MVP, Phase 0 | Native interactive elements, Tab-ordered; skip-link first focusable element on every page |
 | Color contrast | E2E, MVP, Phase 0 | Body text exceeds 7:1 on white background; badges always pair color with a text label |
 | Tier identifying banner | E2E, MVP, Phase 0 | A small banner injected at the top of every page by `scripts/build-prototype-variants.js`, naming which tier is being viewed — not part of the live product, review-only |
