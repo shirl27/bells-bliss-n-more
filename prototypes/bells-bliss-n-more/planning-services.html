@@ -19,7 +19,7 @@
       <a href="planning-services.html" aria-current="page">Planning</a>
     </nav>
     <div class="header-actions">
-      <a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a>
+      <!-- PHASE0-EXCLUDE:start --><a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a><!-- PHASE0-EXCLUDE:end -->
       <span data-auth-slot></span>
     </div>
   </div>
@@ -45,7 +45,7 @@
         <h3>Day-Of Coordination</h3>
         <p class="muted">We run the timeline and vendors so you can enjoy the day.</p>
         <div class="price-row"><span class="price-current">From $150</span></div>
-        <button class="btn btn-primary btn-small" onclick="addToCart('Day-Of Coordination')">Add to Booking</button>
+        <!-- PHASE0-EXCLUDE:start --><button class="btn btn-primary btn-small" onclick="addToCart('Day-Of Coordination')">Add to Booking</button><!-- PHASE0-EXCLUDE:end --><!-- PHASE0-ONLY:start --><a class="btn btn-primary btn-small" href="tel:+12063217416">Call to Book</a><!-- PHASE0-ONLY:end -->
       </div>
     </div>
     <div class="card" style="text-align:center;">
@@ -59,7 +59,7 @@
         <h3>Partial Planning &amp; Design</h3>
         <p class="muted">Décor, layout, and vendor coordination before your event.</p>
         <div class="price-row"><span class="price-current">From $250</span></div>
-        <button class="btn btn-primary btn-small" onclick="addToCart('Partial Planning &amp; Design')">Add to Booking</button>
+        <!-- PHASE0-EXCLUDE:start --><button class="btn btn-primary btn-small" onclick="addToCart('Partial Planning &amp; Design')">Add to Booking</button><!-- PHASE0-EXCLUDE:end --><!-- PHASE0-ONLY:start --><a class="btn btn-primary btn-small" href="tel:+12063217416">Call to Book</a><!-- PHASE0-ONLY:end -->
       </div>
     </div>
     <div class="card" style="text-align:center;">
@@ -73,7 +73,7 @@
         <h3>Full Event Planning</h3>
         <p class="muted">Concept to clean-up — ideal for weddings and milestones.</p>
         <div class="price-row"><span class="price-current">From $350</span></div>
-        <button class="btn btn-primary btn-small" onclick="addToCart('Full Event Planning')">Add to Booking</button>
+        <!-- PHASE0-EXCLUDE:start --><button class="btn btn-primary btn-small" onclick="addToCart('Full Event Planning')">Add to Booking</button><!-- PHASE0-EXCLUDE:end --><!-- PHASE0-ONLY:start --><a class="btn btn-primary btn-small" href="tel:+12063217416">Call to Book</a><!-- PHASE0-ONLY:end -->
       </div>
     </div>
   </div>
@@ -91,9 +91,11 @@
     </div>
   </div>
 
+  <!-- PHASE0-EXCLUDE:start -->
   <div style="text-align:center; margin-top:2.5rem;">
     <a class="btn btn-secondary" href="cart.html">View Cart &amp; Continue</a>
   </div>
+  <!-- PHASE0-EXCLUDE:end -->
 </main>
 
 <footer class="site-footer">
@@ -105,7 +107,7 @@
       <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> <button type="button" class="footer-address-btn" data-address="448 S 190th St, Burien WA 98148" onclick="openMapPicker(event)">448 S 190th St, Burien WA 98148</button></span>
       <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> <a href="https://www.instagram.com/bellsblissnmore/" target="_blank" rel="noopener noreferrer">@BellsBlissNMore</a></span>
     </p>
-    <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a> · <a href="prototype-map.html">Prototype Map (for review)</a></p>
+    <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a><!-- PHASE0-EXCLUDE:start --> · <a href="prototype-map.html">Prototype Map (for review)</a><!-- PHASE0-EXCLUDE:end --></p>
   </div>
 </footer>
 

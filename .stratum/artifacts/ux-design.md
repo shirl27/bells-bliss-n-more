@@ -11,7 +11,9 @@ Changed since v1:
 - Prototype-only navigation aid moved off every page and into its own `prototype-map.html`, linked from a single small footer line — this is a review tool, not part of the live product, and does not appear in the Requirement Traceability Matrix below.
 - **Two scope additions beyond Discovery Brief v1 were built at stakeholder request: a customer reviews system, and booking cancellation/bulk-delete in Admin Bookings. Both are documented in Section 7 and are flagged, not yet formally scoped — see that section before this goes to `/blueprint`.**
 
-Clickable Prototype: `prototypes/bells-bliss-n-more/index.html`
+**Note (added post-v2, full v3 rewrite still queued):** the two scope additions in Section 7 are no longer "flagged, blocking `/blueprint`" — they've been formally resolved as **End-to-End backlog, not part of MVP**, per Discovery Brief v2's new Scope Boundary section and `scope-matrix.md`. This document remains the End-to-End design (full scope, all screens); `ux-design-mvp.md` covers the trimmed MVP scope. Live links: `/end-2-end/` for this document's scope, `/mvp/` for the trimmed scope, `/phase0/` for the pre-MVP static release. Section 7's open sub-questions (review sourcing/moderation, cancellation semantics) are still genuinely open — only the "does this block MVP" question has been answered (no).
+
+Clickable Prototype: `prototypes/bells-bliss-n-more/index.html` (also published at `https://gbenninful.github.io/bells-bliss-n-more/end-2-end/` via `scripts/build-prototype-variants.js`)
 
 ---
 

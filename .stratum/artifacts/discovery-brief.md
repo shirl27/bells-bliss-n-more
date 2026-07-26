@@ -1,8 +1,11 @@
 # Discovery Brief — Bells Bliss N More (Event Planning & Rentals Website)
 
-Version: v1
-Built against: none
-Changed since v1: initial version
+Version: v2
+Built against: prototype learnings from `ux-design.md` v2 and the `prototype-review` branch
+Changed since v1:
+- Added a "Scope Boundary: Phase 0 / MVP / End-to-End" section (below) formalizing a three-tier release structure the prototype had already started to outgrow into.
+- The two scope additions flagged in `ux-design.md` v2 §7 (customer reviews, booking cancellation/bulk-delete) — plus a third, the admin hero-editor — are reclassified from "blocking `/blueprint`" to "E2E backlog, resolve when pulled off the backlog for real." They do not block MVP, since MVP is defined as excluding them.
+- No change to the original 26 acceptance criteria below — they remain the MVP definition, unmodified.
 
 ## Problem Statement
 Individuals and small businesses across Burien and the wider King & Snohomish County corridor who plan one-time or occasional events (weddings, birthdays, graduations, baby showers, corporate parties) currently have no local vendor that bundles event planning and equipment rentals into one self-serve, real-pricing, online experience — competitors in the area are either rental-only, quote-request-only, or built for larger corporate-scale events elsewhere (confirmed via prior `/research`). Bells Bliss N More wants a public-facing website that lets customers browse real inventory and pricing, book planning services and rentals together, and pay online end-to-end — automating as much of the booking workflow as possible for both customers and the business.
@@ -49,6 +52,14 @@ As an Admin, I want to see customer info and order history so that I can give re
 11. An authenticated admin can view a customer's contact info and booking/order history.
 12. The public site does not require an account to browse the catalog or view pricing.
 13. No raw payment card data is stored directly by Bells Bliss N More's own systems.
+
+## Scope Boundary: Phase 0 / MVP / End-to-End
+
+Three release tiers, each a live, linked prototype (`/phase0/`, `/mvp/`, `/end-2-end/`):
+
+- **MVP** = exactly the 26 acceptance criteria below — the full self-serve browse → combined cart/checkout → real online payment → guest-or-registered → admin catalog/bookings flow. This is the target for `/blueprint` and the first real build.
+- **End-to-End** = MVP plus everything currently prototyped beyond it: a customer reviews system (Home reviews band, dedicated Reviews page, Admin Reviews management), booking cancellation/bulk-delete in Admin Bookings, and an admin hero-editor for the homepage. None of these trace to a requirement below — they were built at the stakeholder's request during UX review, ahead of formal scoping. They remain a live, ongoing backlog/blueprint rather than blocking MVP; each needs real answers (sourcing/moderation for reviews, soft- vs. hard-delete and audit trail for cancellation) before it gets built for real, but those answers are needed only when it's pulled off the backlog, not before MVP ships.
+- **Phase 0** = a static, zero-automation release the stakeholder wants live *before* MVP, to establish an online presence quickly and buy time. Scoped as Home + Catalog + Item Detail + Planning Services with real pricing shown (preserving the core differentiator vs. quote-request-only competitors), "Add to Cart"/"Add to Booking" replaced by "Call to Book"/email contact, and a simple Request Info form — no cart, checkout, accounts, or admin panel. Phase 0 does not introduce new requirements; it is a strict subset of MVP's already-approved scope plus one CTA-behavior change, so it is not tracked as a separate requirement set (see the Scope Matrix for the exact per-requirement Phase 0 applicability).
 
 ## Constraints
 - Greenfield build — no existing systems to integrate with.

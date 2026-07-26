@@ -19,7 +19,7 @@
       <a href="planning-services.html">Planning</a>
     </nav>
     <div class="header-actions">
-      <a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a>
+      <!-- PHASE0-EXCLUDE:start --><a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a><!-- PHASE0-EXCLUDE:end -->
       <span data-auth-slot></span>
     </div>
   </div>
@@ -153,6 +153,7 @@
     </div>
   </section>
 
+  <!-- MVP-EXCLUDE:start -->
   <section class="reviews-band">
     <div class="reviews-band-inner">
       <div class="reviews-band-head">
@@ -163,6 +164,36 @@
       <p class="reviews-band-more"><a class="btn btn-primary" href="reviews.html">View More Reviews</a></p>
     </div>
   </section>
+  <!-- MVP-EXCLUDE:end -->
+
+  <!-- PHASE0-ONLY:start -->
+  <section class="popular-band">
+    <div class="home-wrap" style="max-width:640px;">
+      <div class="home-section-head">
+        <div>
+          <p class="eyebrow">Get In Touch</p>
+          <h2>Request more info</h2>
+        </div>
+      </div>
+      <p style="color:var(--color-text-muted); margin-top:-0.5rem;">Tell us a bit about your event and we'll get back to you by email — no account needed.</p>
+      <form onsubmit="return submitRequestInfo(event)" style="display:flex; flex-direction:column; gap:1rem; max-width:420px;">
+        <div class="field">
+          <label for="ri-name">Name</label>
+          <input type="text" id="ri-name" required>
+        </div>
+        <div class="field">
+          <label for="ri-email">Your email</label>
+          <input type="email" id="ri-email" required>
+        </div>
+        <div class="field">
+          <label for="ri-message">What are you planning?</label>
+          <textarea id="ri-message" rows="3" placeholder="Event type, date, estimated guest count..."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send via Email</button>
+      </form>
+    </div>
+  </section>
+  <!-- PHASE0-ONLY:end -->
 </main>
 
 <footer class="home-footer">
@@ -178,7 +209,7 @@
         <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> <button type="button" class="footer-address-btn" data-address="448 S 190th St, Burien WA 98148" onclick="openMapPicker(event)">448 S 190th St, Burien WA 98148</button></span>
         <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> <a href="https://www.instagram.com/bellsblissnmore/" target="_blank" rel="noopener noreferrer">@BellsBlissNMore</a></span>
       </p>
-      <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a> · <a href="prototype-map.html">Prototype Map (for review)</a></p>
+      <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a><!-- PHASE0-EXCLUDE:start --> · <a href="prototype-map.html">Prototype Map (for review)</a><!-- PHASE0-EXCLUDE:end --></p>
     </div>
     <div>
       <h3 style="font-size:1rem;">Stay in the loop</h3>

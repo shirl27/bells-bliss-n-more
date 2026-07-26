@@ -1,0 +1,55 @@
+# UX Artifact Set — Bells Bliss N More — MVP
+
+Version: v1
+Built against: Discovery Brief v2, trimmed from `ux-design.md` v2
+
+MVP is exactly Discovery Brief v2's 26 acceptance criteria — the full self-serve browse → combined cart/checkout → real online payment → guest-or-registered → admin catalog/bookings flow — with the three End-to-End-only backlog additions (customer reviews, booking cancellation/bulk-delete, admin hero-editor) removed. See `scope-matrix.md` for the per-requirement breakdown and `ux-design.md` for the full End-to-End screen set these are trimmed from.
+
+Clickable Prototype: `https://gbenninful.github.io/bells-bliss-n-more/mvp/` (generated from the shared source tree in `prototypes/bells-bliss-n-more/` via `scripts/build-prototype-variants.js` — not a hand-maintained copy)
+
+---
+
+## 1. Screens in MVP
+
+15 screens, unchanged in layout/behavior from `ux-design.md` v2 except where noted:
+
+| Screen | Purpose | File |
+|---|---|---|
+| Home | Browse entry, AC-12 | `index.html` (reviews band removed — see Excluded, below) |
+| Catalog | AC-01, AC-02, AC-12, US-01, US-02 | `catalog.html` |
+| Item Detail | AC-01, AC-02, US-01, US-02 | `item-detail.html` |
+| Planning Services | US-03, US-07, US-08, AC-03 | `planning-services.html` |
+| Cart | AC-03 | `cart.html` |
+| Checkout | AC-03, AC-04, AC-05, AC-06, AC-13 | `checkout.html` |
+| Order Confirmation | AC-04 success state, AC-06 continuation | `order-confirmation.html` |
+| Log In | AC-05, AC-06, AC-07 | `login.html` (admin nav still links here via demo disclosure) |
+| Create Account | US-06, AC-06 | `create-account.html` |
+| Account Dashboard | AC-07, US-09 | `account-dashboard.html` |
+| Admin Dashboard | Admin entry point, US-11 | `admin-dashboard.html` (Reviews / Home Page nav entries removed) |
+| Admin Bookings | AC-09, AC-10 | `admin-bookings.html` (bulk-select/delete removed — see Excluded) |
+| Admin Booking Detail | AC-10, AC-11 | `admin-booking-detail.html` (Reviews / Home Page nav entries removed) |
+| Admin Catalog | AC-08 — list view | `admin-catalog.html` (Reviews / Home Page nav entries removed) |
+| Admin Catalog — Edit Item | AC-08 — form view | `admin-catalog-item-edit.html` (Reviews / Home Page nav entries removed) |
+
+## 2. Excluded from MVP (End-to-End backlog)
+
+- **Reviews band** on Home, plus the standalone `reviews.html`, `admin-reviews.html`, `admin-review-edit.html` screens — not shipped in this tier at all.
+- **Bulk-select / "Delete Selected" / cancellation** in Admin Bookings — the checkbox column, bulk-action bar, and the draft-scope note are all removed; every other Admin Bookings behavior (filtering, viewing) is unchanged.
+- **Admin hero-editor** (`admin-hero-edit.html`) and its nav entry.
+
+## 3. Requirement Traceability Matrix
+
+Identical to `ux-design.md` v2 §3 — reproduced here since it's this tier's actual scope, not a superset.
+
+**Coverage: 26 / 26 Discovery Brief v2 requirements Mapped. 0 Unmapped.** (See `ux-design.md` for the full per-requirement screen/interaction table — unchanged for MVP's 15 screens.)
+
+## 4. Phase 0 configuration (delta only — Phase 0 does not get its own design doc)
+
+Phase 0 is a further-trimmed, zero-automation subset of MVP's already-approved scope, not a new requirement set, so it's documented here as a delta rather than a standalone artifact:
+
+- **Screens shipped**: Home, Catalog, Item Detail, Planning Services, Privacy Policy only (4 of the 15 above, plus the legal page).
+- **CTA swap**: every "Add to Cart" / "Add to Booking" button becomes a "Call to Book" (`tel:`) link, with a paired "Email" (`mailto:`) link on Item Detail. See `ux-spec.md` for the exact behavior.
+- **Removed sitewide**: header cart icon, "View Cart & Continue" links, the Prototype Map footer link (not part of Phase 0's file set).
+- **Kept as-is**: the Home reviews band (static, real, verbatim content — no admin dependency, so none of the reviews backlog's open questions apply).
+- **Added**: a Request Info form on Home (`mailto:`-prefilled, zero backend) — see `ux-spec.md`.
+- Generated automatically from the same source tree via `scripts/build-prototype-variants.js`; not a hand-maintained fork.
