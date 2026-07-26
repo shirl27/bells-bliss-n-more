@@ -142,7 +142,18 @@ function submitRequestInfo(evt) {
   var message = document.getElementById('ri-message').value;
   var subject = 'Info request from ' + name;
   var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-  window.location.href = 'mailto:info@bellsblissnmore.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  var mailtoUrl = 'mailto:info@bellsblissnmore.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+  // Some browsers only hand off mailto: reliably from a real, direct anchor click —
+  // reassigning window.location.href from script is treated more like a redirect and
+  // gets silently ignored in some environments. A synthetic click on a real <a> is
+  // the standard, more reliable way to trigger the OS mail handler from JS.
+  var link = document.createElement('a');
+  link.href = mailtoUrl;
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 
   var fallback = document.getElementById('ri-confirmation');
   var fallbackText = document.getElementById('ri-fallback-text');
