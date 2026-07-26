@@ -222,11 +222,12 @@
     <div>
       <h3 style="font-size:1rem;">Stay in the loop</h3>
       <p>Seasonal availability and sale alerts, occasionally.</p>
-      <form onsubmit="event.preventDefault();">
+      <form id="newsletter-form" onsubmit="return submitNewsletterSignup(event)">
         <label for="newsletter-email" class="visually-hidden">Email address</label>
         <input type="email" id="newsletter-email" placeholder="you@example.com" required>
         <button class="btn btn-primary" type="submit">Sign Up</button>
       </form>
+      <p id="newsletter-confirmation" hidden style="color:var(--color-accent-dark); font-weight:600;">Thanks — you're on the list!</p>
     </div>
   </div>
 </footer>

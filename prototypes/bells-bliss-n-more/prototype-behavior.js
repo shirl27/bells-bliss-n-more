@@ -153,6 +153,19 @@ function submitRequestInfo(evt) {
   return false;
 }
 
+// --- Newsletter signup: no real backend anywhere in this prototype, so this has always
+// been a no-op by design. Showing a confirmation instead of nothing is consistent with
+// every other simulated interaction here (e.g. Add to Cart's toast) — it's not claiming
+// anything the rest of the prototype doesn't already pretend. ---
+function submitNewsletterSignup(evt) {
+  evt.preventDefault();
+  var form = evt.target;
+  var confirmation = document.getElementById('newsletter-confirmation');
+  form.hidden = true;
+  if (confirmation) confirmation.hidden = false;
+  return false;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   setCartCount(getCartCount());
   renderAuthState();
