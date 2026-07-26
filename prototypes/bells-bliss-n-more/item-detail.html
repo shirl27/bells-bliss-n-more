@@ -20,7 +20,7 @@
     </nav>
     <div class="header-actions">
       <a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a>
-      <a class="btn btn-secondary" href="login.html">Log In</a>
+      <span data-auth-slot></span>
     </div>
   </div>
 </header>
@@ -62,31 +62,24 @@
   <div class="footer-inner">
     <p class="footer-tagline">Where Every Detail Tells Your Story</p>
     <p class="footer-contact">
-      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> 206-321-7416</span>
-      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> info@bellsblissnmore.com</span>
-      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> 448 S 190th St, Burien WA 98148</span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> <a href="tel:+12063217416">206-321-7416</a></span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> <a href="mailto:info@bellsblissnmore.com">info@bellsblissnmore.com</a></span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> <button type="button" class="footer-address-btn" data-address="448 S 190th St, Burien WA 98148" onclick="openMapPicker(event)">448 S 190th St, Burien WA 98148</button></span>
+      <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> <a href="https://www.instagram.com/bellsblissnmore/" target="_blank" rel="noopener noreferrer">@BellsBlissNMore</a></span>
     </p>
-    <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+    <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a> · <a href="prototype-map.html">Prototype Map (for review)</a></p>
   </div>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="prototype-behavior.js"></script>
 <script>
-  function getCartCount() { return parseInt(localStorage.getItem('bbnm_cart_count') || '0', 10); }
-  function setCartCount(n) {
-    localStorage.setItem('bbnm_cart_count', String(n));
-    document.querySelectorAll('.cart-count').forEach(function(el){ el.textContent = n; });
-  }
   function addToCart() {
     var qty = parseInt(document.getElementById('qty').value || '1', 10);
     setCartCount(getCartCount() + qty);
-    var toast = document.getElementById('toast');
-    toast.textContent = 'Added ' + qty + ' to cart';
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+    showToast('Added ' + qty + ' to cart');
   }
-  document.addEventListener('DOMContentLoaded', function(){ setCartCount(getCartCount()); });
 </script>
 </body>
 </html>

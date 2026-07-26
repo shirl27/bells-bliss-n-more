@@ -20,17 +20,17 @@
     </nav>
     <div class="header-actions">
       <a class="icon-link" href="cart.html" aria-label="View cart, items in cart">🛒<span class="cart-count" id="cart-count">0</span></a>
-      <a class="btn btn-secondary" href="login.html">Log In</a>
+      <span data-auth-slot></span>
     </div>
   </div>
 </header>
 
 <main id="main">
-  <section class="hero-v3">
-    <div class="hero-v3-inner">
+  <section class="hero-v3" id="hero">
+    <div class="hero-v3-inner" id="hero-inner">
       <div>
-        <h1>Celebrations, made beautiful.</h1>
-        <p style="color:var(--color-text-muted); font-size:1.1rem; margin:0 0 2rem;">Planning and rentals, bundled — real prices, one checkout.</p>
+        <h1 id="hero-headline"></h1>
+        <p id="hero-subhead" style="color:var(--color-text-muted); font-size:1.1rem; margin:0 0 2rem;"></p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="catalog.html">Browse Rentals</a>
           <a class="btn btn-secondary" href="planning-services.html">Planning Services</a>
@@ -72,45 +72,55 @@
     <h2 id="steps-heading" class="visually-hidden">How it works</h2>
     <div class="home-steps-grid">
       <div class="home-step">
+        <svg class="home-step-icon" viewBox="0 0 96 96" aria-hidden="true">
+          <circle cx="48" cy="48" r="48" fill="#EFE0BE"/>
+          <circle cx="42" cy="42" r="16" fill="none" stroke="#A9822C" stroke-width="4"/>
+          <line x1="54" y1="54" x2="68" y2="68" stroke="#7C5F20" stroke-width="5" stroke-linecap="round"/>
+        </svg>
         <span class="home-step-num" aria-hidden="true">01</span>
-        <div><h3>Browse</h3><p>Real prices on every rental item and planning package — no waiting on a quote.</p></div>
+        <h3>Browse</h3>
+        <p>Real prices on every rental item and planning package — no waiting on a quote.</p>
       </div>
       <div class="home-step">
+        <svg class="home-step-icon" viewBox="0 0 96 96" aria-hidden="true">
+          <circle cx="48" cy="48" r="48" fill="#EFE0BE"/>
+          <rect x="28" y="30" width="40" height="36" rx="4" fill="#fff" stroke="#A9822C" stroke-width="3"/>
+          <rect x="28" y="30" width="40" height="10" fill="#A9822C"/>
+          <line x1="38" y1="24" x2="38" y2="34" stroke="#7C5F20" stroke-width="3" stroke-linecap="round"/>
+          <line x1="58" y1="24" x2="58" y2="34" stroke="#7C5F20" stroke-width="3" stroke-linecap="round"/>
+          <path d="M38 52l6 6 12-13" fill="none" stroke="#7C8F6C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <span class="home-step-num" aria-hidden="true">02</span>
-        <div><h3>Book</h3><p>Add rentals and a planning service to one cart, pick your date, pay online.</p></div>
+        <h3>Book</h3>
+        <p>Add rentals and a planning service to one cart, pick your date, pay online.</p>
       </div>
       <div class="home-step">
+        <svg class="home-step-icon" viewBox="0 0 96 96" aria-hidden="true">
+          <circle cx="48" cy="48" r="48" fill="#EFE0BE"/>
+          <path d="M30 66 L58 30" stroke="#7C5F20" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="60" cy="28" r="4" fill="#A9822C"/>
+          <circle cx="70" cy="40" r="3" fill="#7C8F6C"/>
+          <circle cx="56" cy="44" r="3" fill="#A9822C"/>
+          <circle cx="66" cy="52" r="4" fill="#7C5F20"/>
+          <circle cx="46" cy="34" r="3" fill="#7C8F6C"/>
+        </svg>
         <span class="home-step-num" aria-hidden="true">03</span>
-        <div><h3>Celebrate</h3><p>We deliver, set up, and coordinate — you show up and enjoy it.</p></div>
+        <h3>Celebrate</h3>
+        <p>We deliver, set up, and coordinate — you show up and enjoy it.</p>
       </div>
     </div>
   </section>
 
-  <section class="home-wrap" aria-labelledby="rentals-heading" style="padding-bottom: 3rem;">
-    <div class="home-section-head">
-      <div>
-        <p class="eyebrow">Popular Right Now</p>
-        <h2 id="rentals-heading">Rentals worth a look</h2>
+  <section class="popular-band">
+    <div class="home-wrap" aria-labelledby="rentals-heading">
+      <div class="home-section-head">
+        <div>
+          <p class="eyebrow">Popular Right Now</p>
+          <h2 id="rentals-heading">Rentals worth a look</h2>
+        </div>
+        <a href="catalog.html">See all rentals &rarr;</a>
       </div>
-      <a href="catalog.html">See all rentals &rarr;</a>
-    </div>
-    <div class="home-scroll-row">
-      <div class="home-scroll-card">
-        <div class="card-media" aria-hidden="true"><span class="badge-sale">SALE</span>✨</div>
-        <div class="home-scroll-card-body"><h3>Neon "Happy Birthday" Sign</h3><div class="price-row"><span class="price-was">$40</span><span class="price-current">$35</span></div></div>
-      </div>
-      <div class="home-scroll-card">
-        <div class="card-media" aria-hidden="true"><span class="badge-sale">SALE</span>🎈</div>
-        <div class="home-scroll-card-body"><h3>Balloon Arch</h3><div class="price-row"><span class="price-was">$70</span><span class="price-current">$60</span></div></div>
-      </div>
-      <div class="home-scroll-card">
-        <div class="card-media" aria-hidden="true"><span class="badge-sale">SALE</span>🌸</div>
-        <div class="home-scroll-card-body"><h3>Backdrop Arch &amp; Cover</h3><div class="price-row"><span class="price-was">$55</span><span class="price-current">$45</span></div></div>
-      </div>
-      <div class="home-scroll-card">
-        <div class="card-media" aria-hidden="true">🪑</div>
-        <div class="home-scroll-card-body"><h3>White Foldable Table</h3><div class="price-row"><span class="price-current">$15</span></div></div>
-      </div>
+      <div class="home-scroll-row" id="popular-rentals-grid"></div>
     </div>
   </section>
 
@@ -149,53 +159,7 @@
         <p class="eyebrow">What Our Customers Say</p>
         <h2>Recent reviews from Google</h2>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-text">I had such a great experience with this party rental business! I rented chairs and a photo backdrop and everything was absolutely perfect.. clean, high quality and exactly as described. The standout for me was the custom balloon garland she created. It was stunning and really brought the whole event together. So many guests complimented it and used the backdrop for photos all day! She was professional, responsive and made the entire process so easy from start to finish. Delivery and setup were smooth and stress-free, which I really appreciated. I would definitely recommend her for any event and will be using her again in the future!</p>
-          <button class="review-read-more" onclick="toggleReview(this)">Read more</button>
-          <div class="review-footer">
-            <span class="review-name">Season Rahm</span>
-            <span>Edited 2 months ago</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-text">Shirl was great! Her communication was great and highly recommend to others! Had the exact chairs I needed for my elopement.</p>
-          <button class="review-read-more" onclick="toggleReview(this)" hidden>Read more</button>
-          <div class="review-footer">
-            <span class="review-name">Kenny Dang</span>
-            <span>a month ago</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-text">Very good team to work with! They were super easy to communicate with, very responsive, and so kind throughout the whole process. Everything was smooth and stress-free, and they even helped me load the chairs, which I really appreciated. Such great customer service — I would definitely use them again and highly recommend them to anyone needing rentals for an event!</p>
-          <button class="review-read-more" onclick="toggleReview(this)">Read more</button>
-          <div class="review-footer">
-            <span class="review-name">Viki Filovets</span>
-            <span>a week ago</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-text">Clean tables &amp; chair, would rent again! Business owner was very kind and accommodating.</p>
-          <button class="review-read-more" onclick="toggleReview(this)" hidden>Read more</button>
-          <div class="review-footer">
-            <span class="review-name">Keianna Nguyen</span>
-            <span>2 weeks ago</span>
-          </div>
-        </div>
-        <div class="review-card">
-          <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-text">Service was amazing. Sheryl help me for a next day rental. Table covers were nicely packed, and clean.</p>
-          <button class="review-read-more" onclick="toggleReview(this)" hidden>Read more</button>
-          <div class="review-footer">
-            <span class="review-name">Kayla Ann Minshall</span>
-            <span>3 weeks ago</span>
-          </div>
-        </div>
-      </div>
+      <div class="reviews-grid" id="home-reviews-grid"></div>
       <p class="reviews-band-more"><a class="btn btn-primary" href="reviews.html">View More Reviews</a></p>
     </div>
   </section>
@@ -207,42 +171,59 @@
       <h3>Bells Bliss N More</h3>
       <p>Where every detail tells your story. Event planning &amp; rentals across King &amp; Snohomish Counties, WA.</p>
       <p class="footer-contact">
-        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> 206-321-7416</span>
-        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> info@bellsblissnmore.com</span>
+        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1v3.2c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z" fill="currentColor"/></svg> <a href="tel:+12063217416">206-321-7416</a></span>
+        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.1 6.1a1 1 0 0 0 1 0L19.6 7H4.4z" fill="currentColor"/></svg> <a href="mailto:info@bellsblissnmore.com">info@bellsblissnmore.com</a></span>
       </p>
       <p class="footer-contact">
-        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> 448 S 190th St, Burien WA 98148</span>
-        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> @BellsBlissNMore</span>
+        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="currentColor"/></svg> <button type="button" class="footer-address-btn" data-address="448 S 190th St, Burien WA 98148" onclick="openMapPicker(event)">448 S 190th St, Burien WA 98148</button></span>
+        <span class="footer-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg> <a href="https://www.instagram.com/bellsblissnmore/" target="_blank" rel="noopener noreferrer">@BellsBlissNMore</a></span>
       </p>
-      <p class="proto-map-link"><a href="prototype-map.html">Prototype Map (for review)</a></p>
+      <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a> · <a href="prototype-map.html">Prototype Map (for review)</a></p>
     </div>
     <div>
       <h3 style="font-size:1rem;">Stay in the loop</h3>
       <p>Seasonal availability and sale alerts, occasionally.</p>
       <form onsubmit="event.preventDefault();">
         <label for="newsletter-email" class="visually-hidden">Email address</label>
-        <input type="email" id="newsletter-email" placeholder="you@example.com">
+        <input type="email" id="newsletter-email" placeholder="you@example.com" required>
         <button class="btn btn-primary" type="submit">Sign Up</button>
       </form>
     </div>
   </div>
 </footer>
 
+<script src="content-data.js"></script>
+<script src="prototype-behavior.js"></script>
 <script>
-  function getCartCount() { return parseInt(localStorage.getItem('bbnm_cart_count') || '0', 10); }
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.cart-count').forEach(function(el){ el.textContent = getCartCount(); });
-    document.querySelectorAll('.review-text').forEach(function(el){
-      var btn = el.nextElementSibling;
-      if (!btn || !btn.classList.contains('review-read-more')) return;
-      btn.hidden = !(el.scrollHeight > el.clientHeight + 4);
-    });
+  document.addEventListener('DOMContentLoaded', function () {
+    var effectiveHero = getEffectiveHeroConfig();
+    document.getElementById('hero-headline').textContent = effectiveHero.headline;
+    document.getElementById('hero-subhead').textContent = effectiveHero.subhead;
+    var hero = document.getElementById('hero');
+    var heroInner = document.getElementById('hero-inner');
+    if (effectiveHero.layout === 'full-width') {
+      hero.classList.add('hero-full-width');
+      var bgSvg = heroInner.querySelector('svg').cloneNode(true);
+      var bg = document.createElement('div');
+      bg.className = 'hero-v3-bg';
+      bg.appendChild(bgSvg);
+      var overlay = document.createElement('div');
+      overlay.className = 'hero-overlay';
+      overlay.style.opacity = effectiveHero.overlayOpacity;
+      var content = heroInner.querySelector('div');
+      content.classList.add('hero-v3-content');
+      hero.innerHTML = '';
+      hero.appendChild(bg);
+      hero.appendChild(overlay);
+      hero.appendChild(content);
+    } else {
+      var ratio = effectiveHero.splitRatio.split(':').map(Number);
+      heroInner.style.gridTemplateColumns = ratio[0] + 'fr ' + ratio[1] + 'fr';
+    }
+
+    renderPopularCards('popular-rentals-grid', popularRentals);
+    renderReviewCards('home-reviews-grid', reviews, true);
   });
-  function toggleReview(btn) {
-    var text = btn.previousElementSibling;
-    var expanded = text.classList.toggle('expanded');
-    btn.textContent = expanded ? 'Show less' : 'Read more';
-  }
 </script>
 </body>
 </html>

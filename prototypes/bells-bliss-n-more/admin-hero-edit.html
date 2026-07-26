@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Home Page Hero — Admin — Bells Bliss N More</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header admin-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span class="brand-text">Bells Bliss N More<span class="admin-badge">Admin</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Admin">
+      <a href="admin-dashboard.html">Dashboard</a>
+      <a href="admin-bookings.html">Bookings</a>
+      <a href="admin-catalog.html">Catalog</a>
+      <a href="admin-reviews.html">Reviews</a>
+      <a href="admin-hero-edit.html" aria-current="page">Home Page</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-secondary" href="index.html">Log Out</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" style="max-width:640px;">
+  <p class="breadcrumb"><a href="admin-dashboard.html">Dashboard</a> / Home Page Hero</p>
+  <h1>Edit home page hero</h1>
+  <p style="color:var(--color-text-muted); margin-top:-0.75rem;">Changes take effect immediately on the home page — no developer or deploy needed. <a href="index.html" target="_blank" rel="noopener noreferrer">View home page &rarr;</a></p>
+
+  <form id="hero-form">
+    <div class="field">
+      <label for="hero-headline-input">Headline</label>
+      <input type="text" id="hero-headline-input" required>
+    </div>
+    <div class="field">
+      <label for="hero-subhead-input">Subheading</label>
+      <input type="text" id="hero-subhead-input" required>
+    </div>
+
+    <div class="field">
+      <label for="hero-layout">Layout</label>
+      <select id="hero-layout" onchange="toggleHeroFields()">
+        <option value="two-column">Two-column (headline + illustration side by side)</option>
+        <option value="full-width">Full-width (illustration as a background banner)</option>
+      </select>
+    </div>
+
+    <fieldset id="hero-ratio-fields">
+      <legend>Column split (two-column only)</legend>
+      <div class="field-row">
+        <div class="field">
+          <label for="hero-ratio-preset">Preset</label>
+          <select id="hero-ratio-preset" onchange="applyRatioPreset()">
+            <option value="">Custom (set below)</option>
+            <option value="1:1">50 / 50</option>
+            <option value="1:1.15">Current default (~47 / 53)</option>
+            <option value="1.5:1">60 / 40</option>
+            <option value="2.33:1">70 / 30</option>
+            <option value="0.67:1">40 / 60</option>
+            <option value="0.43:1">30 / 70</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="hero-split-ratio">Ratio (left:right)</label>
+          <input type="text" id="hero-split-ratio" placeholder="e.g. 1:1.15">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset id="hero-overlay-fields" style="display:none;">
+      <legend>Image overlay (full-width only)</legend>
+      <div class="field">
+        <label for="hero-overlay">Darkening overlay opacity: <span id="hero-overlay-value">0</span></label>
+        <input type="range" id="hero-overlay" min="0" max="1" step="0.05" oninput="document.getElementById('hero-overlay-value').textContent = this.value">
+      </div>
+      <p class="field-hint">Higher values darken the background image so white headline text stays readable.</p>
+    </fieldset>
+
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+      <button type="button" class="btn btn-secondary" onclick="resetHeroForm()">Reset to Default</button>
+      <a class="btn btn-secondary" href="admin-dashboard.html">Cancel</a>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p>Bells Bliss N More Admin · Internal use only</p>
+    <p class="proto-map-link"><a href="privacy-policy.html">Privacy Policy</a> · <a href="prototype-map.html">Prototype Map (for review)</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="content-data.js"></script>
+<script src="prototype-behavior.js"></script>
+<script>
+  function toggleHeroFields() {
+    var isFullWidth = document.getElementById('hero-layout').value === 'full-width';
+    document.getElementById('hero-ratio-fields').style.display = isFullWidth ? 'none' : 'block';
+    document.getElementById('hero-overlay-fields').style.display = isFullWidth ? 'block' : 'none';
+  }
+  function applyRatioPreset() {
+    var preset = document.getElementById('hero-ratio-preset').value;
+    if (preset) document.getElementById('hero-split-ratio').value = preset;
+  }
+  function populateForm(config) {
+    document.getElementById('hero-headline-input').value = config.headline;
+    document.getElementById('hero-subhead-input').value = config.subhead;
+    document.getElementById('hero-layout').value = config.layout;
+    document.getElementById('hero-split-ratio').value = config.splitRatio;
+    document.getElementById('hero-overlay').value = config.overlayOpacity;
+    document.getElementById('hero-overlay-value').textContent = config.overlayOpacity;
+    toggleHeroFields();
+  }
+  function resetHeroForm() {
+    resetHeroConfigOverride();
+    populateForm(heroConfig);
+    showToast('Reset to default — now live on the home page');
+  }
+  document.getElementById('hero-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    saveHeroConfigOverride({
+      headline: document.getElementById('hero-headline-input').value,
+      subhead: document.getElementById('hero-subhead-input').value,
+      layout: document.getElementById('hero-layout').value,
+      splitRatio: document.getElementById('hero-split-ratio').value,
+      overlayOpacity: parseFloat(document.getElementById('hero-overlay').value)
+    });
+    showToast('Hero settings saved');
+  });
+  document.addEventListener('DOMContentLoaded', function () { populateForm(getEffectiveHeroConfig()); });
+</script>
+</body>
+</html>
