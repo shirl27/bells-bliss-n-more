@@ -40,6 +40,10 @@ Every one of these 26 requirements is in scope for MVP. None is Phase 0-complete
 
 **MVP coverage: 26/26. Phase 0 coverage: 6 fully included, 1 partial, 19 excluded/N/A by design (Phase 0 is intentionally pre-transactional).**
 
+## Considered and rejected for Phase 0
+
+- **Cart + email-order checkout (no online payment).** Would let a customer bundle multiple rentals/planning packages into one itemized `mailto:` submission instead of the current flat per-item "Call to Book" / "Email" CTAs. Rejected: it structurally reintroduces the quote-request model the product's problem statement exists to move away from, while visually resembling a real checkout — a tier-integrity risk (see `phase0-mvp-criteria.md` §3). It would also require substantially rebuilding `checkout.html` (stripping login tabs, the payment box, and the "order placed" semantics) to stay tier-safe, for a benefit — bundling multiple asks — that a single phone call or email already covers today. Revisit only as a deliberate step *toward* MVP, not as a Phase 0 addition.
+
 ## Backlog additions — End-to-End only, not in MVP
 
 These were built into the prototype at the stakeholder's request but don't trace to a Discovery Brief requirement. Tracked here, not counted in the 26/26 above.

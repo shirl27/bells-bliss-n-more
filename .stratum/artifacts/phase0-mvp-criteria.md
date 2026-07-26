@@ -35,6 +35,8 @@ Every one of these was violated at least once while building Bells Bliss N More'
 - **A "zero automation" (or any tier-wide) claim is only true if it's re-verified per control, not inherited from the tier's stated intent.** It's easy to correctly build the one control you were focused on (a mailto-based contact form) while incorrectly asserting an unrelated control (an auth slot) is "inert" without actually checking what it renders.
 - **Verification must test for absence, not only presence.** Confirming the right things exist (the correct CTA text, the right buttons) is a different pass from confirming nothing present points at, or claims, something that isn't shipped. The second pass doesn't happen automatically as a side effect of the first — it has to be run deliberately, and ideally by someone looking at the tier fresh (in this project's case, stakeholder review of the raw output is what actually caught it).
 
+**Worked example**: adding a cart with email-based (no-payment) checkout to Phase 0 was proposed, evaluated against this checklist, and rejected — see `scope-matrix.md`'s "Considered and rejected for Phase 0" section. It failed the first bullet above specifically: it would have looked like real checkout while structurally being the quote-request model the product exists to move away from.
+
 ## 4. Process / decision-authority criteria
 
 - **Verify hosting, CI, and environment constraints during exploration — before they're written into an approved plan**, not after a push fails. A deploy-branch strategy that looks reasonable on paper can be silently incompatible with an existing environment protection rule; check the actual constraint before designing around an assumption.
