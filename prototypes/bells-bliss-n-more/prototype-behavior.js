@@ -132,6 +132,9 @@ function openMapPicker(evt) {
 }
 
 // --- Phase 0 "Request Info" form: zero-backend, opens the visitor's own mail client ---
+// There's no reliable way to detect whether a mailto: handoff actually opened a mail
+// app, so rather than trying to react to failure, the fallback always shows — it's a
+// safety net, not an error state.
 function submitRequestInfo(evt) {
   evt.preventDefault();
   var name = document.getElementById('ri-name').value;
@@ -140,6 +143,13 @@ function submitRequestInfo(evt) {
   var subject = 'Info request from ' + name;
   var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
   window.location.href = 'mailto:info@bellsblissnmore.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+  var fallback = document.getElementById('ri-confirmation');
+  var fallbackText = document.getElementById('ri-fallback-text');
+  if (fallback && fallbackText) {
+    fallbackText.value = 'To: info@bellsblissnmore.com\nSubject: ' + subject + '\n\n' + body;
+    fallback.hidden = false;
+  }
   return false;
 }
 
