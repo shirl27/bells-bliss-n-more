@@ -2,7 +2,7 @@ name: Deploy prototype to GitHub Pages
 
 on:
   push:
-    branches: [main, phase0-mvp-e2e-split]
+    branches: [main]
     paths: [prototypes/bells-bliss-n-more/**, scripts/build-prototype-variants.js]
   workflow_dispatch:
 

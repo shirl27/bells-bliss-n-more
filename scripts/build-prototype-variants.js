@@ -107,13 +107,13 @@ const chooserHtml = `<!doctype html>
 <meta name="robots" content="noindex">
 <title>Bells Bliss N More — Prototype Links</title>
 </head>
-<body style="max-width:640px;margin:4rem auto;padding:0 1.5rem;font-family:system-ui,-apple-system,sans-serif;color:#2b2412;">
-<h1 style="margin-bottom:0.25rem;">Bells Bliss N More</h1>
+<body style="max-width:640px;margin:4rem auto;padding:2rem 1.5rem;font-family:system-ui,-apple-system,sans-serif;color:#2b2412;background:#FBF6EC;min-height:calc(100vh - 4rem);box-sizing:border-box;">
+<h1 style="margin-bottom:0.25rem;color:#2b2412;">Bells Bliss N More</h1>
 <p style="color:#6b5f3f;margin-top:0;">Prototype review links</p>
 <ul style="line-height:2.4;font-size:1.05rem;padding-left:1.2rem;">
-  <li><a href="phase0/index.html">Phase 0</a> — static site, real pricing, no online booking yet</li>
-  <li><a href="mvp/index.html">MVP</a> — the scoped v1 build: full self-serve booking &amp; payment</li>
-  <li><a href="end-2-end/index.html">End-to-End</a> — full current vision, including backlog features</li>
+  <li><a href="phase0/index.html" style="color:#7C5F20;">Phase 0</a> — static site, real pricing, no online booking yet</li>
+  <li><a href="mvp/index.html" style="color:#7C5F20;">MVP</a> — the scoped v1 build: full self-serve booking &amp; payment</li>
+  <li><a href="end-2-end/index.html" style="color:#7C5F20;">End-to-End</a> — full current vision, including backlog features</li>
 </ul>
 </body>
 </html>
