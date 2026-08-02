@@ -71,8 +71,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   color: var(--color-text);
 }
 .brand-mark {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
