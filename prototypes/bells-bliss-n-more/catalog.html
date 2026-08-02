@@ -56,7 +56,7 @@
   <div class="grid grid-3" id="catalog-grid">
 
     <div class="card" data-category="tables-chairs">
-      <div class="card-media" aria-hidden="true">🪑</div>
+      <div class="card-media" aria-hidden="true">🍽️</div>
       <div class="card-body">
         <h3>White Foldable Table</h3>
         <p class="muted">6ft (seats 8) or 8ft rectangular</p>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="card" data-category="tables-chairs">
-      <div class="card-media" aria-hidden="true">🪑</div>
+      <div class="card-media" aria-hidden="true">🍽️</div>
       <div class="card-body">
         <h3>60in Foldable Round Table</h3>
         <p class="muted">Available in white</p>
@@ -111,7 +111,7 @@
     </div>
 
     <div class="card" data-category="tables-chairs">
-      <div class="card-media" aria-hidden="true">🪑</div>
+      <div class="card-media" aria-hidden="true">🍽️</div>
       <div class="card-body">
         <h3>Kid's Table</h3>
         <p class="muted">Available in white</p>
@@ -122,7 +122,7 @@
     </div>
 
     <div class="card" data-category="decor-signage">
-      <div class="card-media" aria-hidden="true">🌸</div>
+      <div class="card-media" aria-hidden="true">🖼️</div>
       <div class="card-body">
         <h3>Backdrop Cover</h3>
         <p class="muted">Includes stand and fabric cover · White, black, blue, or pink</p>
@@ -165,17 +165,19 @@
       </div>
     </div>
 
-    <div class="card" data-category="table-settings">
-      <div class="card-media" aria-hidden="true">🍽️</div>
-      <div class="card-body">
-        <h3>Table Setting (per place)</h3>
-        <p class="muted">Plate, glass, flatware, linen napkin</p>
-        <div class="price-row"><span class="price-current">$8 / setting</span></div>
-        <!-- PHASE0-EXCLUDE:start --><button class="btn btn-primary btn-small" onclick="addToCart('Table Setting')">Add to Cart</button><!-- PHASE0-EXCLUDE:end -->
-        <!-- PHASE0-EXCLUDE:start --><a class="btn btn-secondary btn-small" href="item-detail.html">View Details</a><!-- PHASE0-EXCLUDE:end -->
-      </div>
-    </div>
+  </div>
 
+  <!-- Hidden pending more research; kept out of #catalog-grid so the category/sale
+       filter script (which resets every .card inside the grid) can't un-hide it. -->
+  <div class="card" data-category="table-settings" hidden>
+    <div class="card-media" aria-hidden="true">🍽️</div>
+    <div class="card-body">
+      <h3>Table Setting (per place)</h3>
+      <p class="muted">Plate, glass, flatware, linen napkin</p>
+      <div class="price-row"><span class="price-current">$8 / setting</span></div>
+      <!-- PHASE0-EXCLUDE:start --><button class="btn btn-primary btn-small" onclick="addToCart('Table Setting')">Add to Cart</button><!-- PHASE0-EXCLUDE:end -->
+      <!-- PHASE0-EXCLUDE:start --><a class="btn btn-secondary btn-small" href="item-detail.html">View Details</a><!-- PHASE0-EXCLUDE:end -->
+    </div>
   </div>
 
   <p id="empty-catalog" class="empty-state" hidden>No items match this filter. Try a different category.</p>
