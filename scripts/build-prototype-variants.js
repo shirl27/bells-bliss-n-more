@@ -70,8 +70,8 @@ function buildVariant(outDir, opts) {
     if (name.endsWith('.html')) {
       let html = fs.readFileSync(srcPath, 'utf8');
       html = applyMarkers(html, opts.keepMap);
-      html = injectNoindex(html);
-      html = injectBanner(html, opts.bannerText);
+      if (!opts.production) html = injectNoindex(html);
+      if (opts.bannerText) html = injectBanner(html, opts.bannerText);
       fs.writeFileSync(destPath, html);
     } else {
       fs.copyFileSync(srcPath, destPath);
@@ -82,18 +82,32 @@ function buildVariant(outDir, opts) {
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
-buildVariant(path.join(OUT, 'end-2-end'), {
+// Production Phase 0 ships at the output root with none of the review-only
+// scaffolding (no banner, no noindex) — this is the real public site, what
+// a custom domain (www.bellsblissnmore.com) should point at.
+buildVariant(OUT, {
+  whitelist: PHASE0_WHITELIST,
+  keepMap: { 'MVP-EXCLUDE': true, 'PHASE0-EXCLUDE': false, 'PHASE0-ONLY': true },
+  production: true,
+});
+fs.writeFileSync(path.join(OUT, 'CNAME'), 'www.bellsblissnmore.com\n');
+
+// Internal review builds (all three tiers, banner + noindex) live under /review/
+// so they never sit next to the real production site at the same root.
+const REVIEW_OUT = path.join(OUT, 'review');
+
+buildVariant(path.join(REVIEW_OUT, 'end-2-end'), {
   keepMap: { 'MVP-EXCLUDE': true, 'PHASE0-EXCLUDE': true, 'PHASE0-ONLY': false },
   bannerText: BANNERS['end-2-end'],
 });
 
-buildVariant(path.join(OUT, 'mvp'), {
+buildVariant(path.join(REVIEW_OUT, 'mvp'), {
   excludeFiles: MVP_EXCLUDE_FILES,
   keepMap: { 'MVP-EXCLUDE': false, 'PHASE0-EXCLUDE': true, 'PHASE0-ONLY': false },
   bannerText: BANNERS.mvp,
 });
 
-buildVariant(path.join(OUT, 'phase0'), {
+buildVariant(path.join(REVIEW_OUT, 'phase0'), {
   whitelist: PHASE0_WHITELIST,
   keepMap: { 'MVP-EXCLUDE': true, 'PHASE0-EXCLUDE': false, 'PHASE0-ONLY': true },
   bannerText: BANNERS.phase0,
@@ -115,9 +129,12 @@ const chooserHtml = `<!doctype html>
   <li><a href="mvp/index.html" style="color:#7C5F20;">MVP</a> — the scoped v1 build: full self-serve booking &amp; payment</li>
   <li><a href="end-2-end/index.html" style="color:#7C5F20;">End-to-End</a> — full current vision, including backlog features</li>
 </ul>
+<p style="margin-top:2.5rem;"><a href="../index.html" style="color:#7C5F20;">← Live production site</a></p>
 </body>
 </html>
 `;
-fs.writeFileSync(path.join(OUT, 'index.html'), chooserHtml);
+fs.writeFileSync(path.join(REVIEW_OUT, 'index.html'), chooserHtml);
 
 console.log('Prototype variants generated at', OUT);
+console.log('  production Phase 0: ' + OUT);
+console.log('  review builds:       ' + REVIEW_OUT);

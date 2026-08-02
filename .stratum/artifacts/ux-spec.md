@@ -46,5 +46,5 @@ Shared by reference from both `ux-design.md` (End-to-End) and `ux-design-mvp.md`
 | "How it works" step 2 copy | E2E, MVP: "pay online" copy; Phase 0: "Call or email us" copy | Home page step strip — Phase 0's copy must not promise a cart/payment flow that doesn't exist in that tier |
 | Keyboard navigation | E2E, MVP, Phase 0 | Native interactive elements, Tab-ordered; skip-link first focusable element on every page |
 | Color contrast | E2E, MVP, Phase 0 | Body text exceeds 7:1 on white background; badges always pair color with a text label |
-| Tier identifying banner | E2E, MVP, Phase 0 | A small banner injected at the top of every page by `scripts/build-prototype-variants.js`, naming which tier is being viewed — not part of the live product, review-only |
-| `noindex` meta tag | E2E, MVP, Phase 0, root chooser | Injected by the same generator script — these are review prototypes on a public URL, not the real site |
+| Tier identifying banner | E2E, MVP, and Phase 0 *review builds only* (`/review/**`) | Injected by `scripts/build-prototype-variants.js`, naming which tier is being viewed — not part of the live product. The production Phase 0 build at the output root (what the custom domain serves) gets no banner |
+| `noindex` meta tag | E2E, MVP, and Phase 0 *review builds only* (`/review/**`), plus the `/review/` chooser | Injected by the same generator script — these are review prototypes, not the real site. The production Phase 0 build at the output root is indexable, since it's the actual live site |
