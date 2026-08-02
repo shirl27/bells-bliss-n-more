@@ -13,8 +13,8 @@ var heroConfig = {
 var popularRentals = [
   { name: 'Neon "Happy Birthday" Sign', image: '✨', onSale: false, priceCurrent: 10 },
   { name: 'Balloon Arch Backdrop', image: '🎈', onSale: false, priceCurrent: 10 },
-  { name: 'Backdrop Cover', image: '🌸', onSale: false, priceCurrent: 5 },
-  { name: 'White Foldable Table', image: '🪑', onSale: false, priceCurrent: 18 }
+  { name: 'Backdrop Cover', image: '🖼️', onSale: false, priceCurrent: 5 },
+  { name: 'White Foldable Table', image: '🍽️', onSale: false, priceCurrent: 18 }
 ];
 
 // Newest first. rating is 1-5; renderStars() draws the correct number of filled/empty stars from it.
