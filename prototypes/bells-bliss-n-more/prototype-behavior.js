@@ -95,7 +95,7 @@ function buildPopularCardHTML(item) {
     ? '<span class="price-was">$' + item.priceWas + '</span><span class="price-current">$' + item.priceCurrent + '</span>'
     : '<span class="price-current">$' + item.priceCurrent + '</span>';
   return '<div class="home-scroll-card">' +
-    '<div class="card-media" aria-hidden="true">' + saleBadge + item.image + '</div>' +
+    '<div class="card-media" aria-hidden="true">' + saleBadge + '<img src="' + item.image + '" alt="">' + '</div>' +
     '<div class="home-scroll-card-body"><h3>' + item.name + '</h3><div class="price-row">' + priceHTML + '</div></div>' +
     '</div>';
 }

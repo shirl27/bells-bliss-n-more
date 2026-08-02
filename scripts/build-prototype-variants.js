@@ -77,6 +77,13 @@ function buildVariant(outDir, opts) {
       fs.copyFileSync(srcPath, destPath);
     }
   }
+  // Real image assets (logo, catalog photos) aren't tier-exclusive content — every
+  // whitelisted page set references some subset of them, so copy the whole directory
+  // into every variant rather than tracking per-tier image usage.
+  const imagesDir = path.join(SRC, 'images');
+  if (fs.existsSync(imagesDir)) {
+    fs.cpSync(imagesDir, path.join(outDir, 'images'), { recursive: true });
+  }
 }
 
 fs.rmSync(OUT, { recursive: true, force: true });
